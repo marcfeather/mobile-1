@@ -1,6 +1,7 @@
 <?php
 	include_once '../controllers/common_functions.php';
 	include_once '../model/db.php';
+	landing_page_session_check();
 	$user_id=$_SESSION['user_details']['id'];
 	$conn = db_connect();
 	$condition = "(`user_id`=".$user_id.") ";
@@ -33,7 +34,9 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<div class="jumbotron text-center"><h3>Uploaded Files</h3></div>
+	<a href="logout.php" class="btn btn-success pull-right">Sign Out</a>
+	<div class="jumbotron text-center"><h3>Uploaded Files</h3> 
+	</div>
 	<div style="text-align:center;">
 		<table class="table">
 			<?php  

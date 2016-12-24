@@ -1,7 +1,7 @@
 <?php
 	include_once '../controllers/common_functions.php';
 	include_once '../model/db.php';
-
+	landing_page_session_check();
 ?>
 <html>
 <head>
@@ -21,8 +21,6 @@
 	$_SESSION['numbers']= $_POST['user_data']; 
 	// print_r($_SESSION);
 ?>
-
-
 <div>
 	<h1>Enter Your Message</h1>
 	<hr style="border-top: 1px solid #191616">

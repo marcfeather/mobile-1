@@ -39,7 +39,7 @@
 
 	function login_page_session_check(){
 		if(isset($_SESSION["user_details"])){
-			header('location:home.php');
+			header('location:view.php');
 		}
 	}
 

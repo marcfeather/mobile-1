@@ -2,6 +2,7 @@
 	include_once '../controllers/common_functions.php';
 	include_once '../model/db.php';
 	include_once '../controllers/process_message.php';
+	landing_page_session_check();
 	// echo "<pre>";
 	// print_r($_SESSION['numbers']);
 	// print_r($_POST);

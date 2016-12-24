@@ -1,15 +1,14 @@
 <?php 
 
 	include_once '../controllers/view_controller.php';
-	session_start();
+	include_once '../controllers/common_functions.php';
+	landing_page_session_check();
 	$user_details = $_SESSION['user_details'];
 	if(!empty($_GET['file_name'])){
 		$file_path = "../files/".$user_details['email_id']."/".$_GET['file_name'];
 		$final_excel_data = get_excel_data($file_path);
 	}
-	// echo "<pre>";
-	// print_r($final_excel_data);
-
+	
 ?>
 <html>
 <head>
@@ -19,17 +18,18 @@
 </head>
 <body>
 <form action="validate_message.php" method="post">
- <div class="table-responsive">
- <table class="table">
+<a href="../index.php" class="btn btn-info">HOME</a>
+ <div>
+ <table class="table table-hover">
  	<thead>
  			<?php 
 					echo "<th>Number</th>";
 					unset($final_excel_data[0]);
 				?>
-				<th><input type="checkbox" id="checkAll" /> Check All</th>
-				<th><input type="submit" id="next" value="Go"></th>
+				<th><input type="checkbox" id="checkAll" /> Check All
+				<input type="submit" id="next" value="Go" class="btn btn-primary\"></th>
 	</thead>
-	<tbody>
+	<tbody class="record_table">
 			<?php
 					$td_values = "";
 					$checkbox_value = "";

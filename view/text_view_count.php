@@ -1,3 +1,5 @@
+<?php include_once '../controllers/common_functions.php';
+	landing_page_session_check(); ?>
 <script type="text/javascript">
 
 	function countChar(val) {
@@ -61,6 +63,7 @@ $(document).ready(function(){
 				success: function(data) {  
 					// console.log(data);  
 					document.getElementById('response').innerHTML = "<div class='alert alert-warning'><strong>Hey!</strong>"+data+" hope it is positive or contact support</div>"; 
+					location.href = "view.php";
 				}
 			});
 		});
