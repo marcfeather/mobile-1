@@ -34,11 +34,14 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<a href="logout.php" class="btn btn-success pull-right">Sign Out</a>
-	<div class="jumbotron text-center"><h3>Uploaded Files</h3> 
+	<div class="pull-right" style="padding-right: 1em;"> 
+	<a href="logout.php" class="btn btn-danger">Sign Out</a>
+	</div>
+	<div>
+	<h1 style="text-align: center">Uploaded Files</h1> 
 	</div>
 	<div style="text-align:center;">
-		<table class="table">
+		<table class="table" style="width: 100%">
 			<?php  
 				foreach ($result as $value) {
 					echo "<tr>";
@@ -46,7 +49,7 @@
 						echo "<a href='file_handle.php?file_name=".$value['file_name']."'>".$value['file_name']."</a>";
 						echo "</td>";
 						echo "<td>";
-						echo "<a href='../view/delete_file.php?file_name=".$value['file_name']."'><button type='button' class='btn btn-danger' style='width:208px;'> Delete </button></a>";
+						echo "<a href='../view/delete_file.php?file_name=".$value['file_name']."'><button type='button' class='btn btn-danger' style='width:208px;align:center;'> Delete </button></a>";
 						echo "</td>";
 					echo "</tr>";
 				}

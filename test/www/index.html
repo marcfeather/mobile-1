@@ -22,8 +22,23 @@
 </head>
 
 <body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#hideAll").show();
+    });
 
-    <iframe src="http://localhost/mobile" style="
+    $("iframe").load(function() {
+        $("#hideAll").hide();
+    });
+</script>
+    <div id="hideAll" style="
+    text-align: center;
+    margin-top: 50%;
+">
+        <img src="images/ajax-loader.gif"/><br/>
+        Loading..
+    </div>
+    <iframe src="http://103.207.4.235:8081/sms_api/mobile" style="
    height: 100%;
    left:     0px;
    position: absolute;

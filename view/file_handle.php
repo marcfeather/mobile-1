@@ -18,17 +18,30 @@
 </head>
 <body>
 <form action="validate_message.php" method="post">
-<a href="../index.php" class="btn btn-info">HOME</a>
+<table class="table">
+	<td><a href="../index.php" class="btn btn-info" style="width: 100%">HOME</a></td>
+	<td><a href="logout.php" class="btn btn-danger" style="width: 100%">Sign Out</a></td>
+</table>
  <div>
  <table class="table table-hover">
  	<thead>
  			<?php 
-					echo "<th>Number</th>";
+					$heading_val = "";
+					foreach ($final_excel_data[0] as $key => $heading) {
+						echo "<th>".$heading."</th>";
+						if($heading_val==""){
+							$heading_val = $heading;
+						}else{
+							$heading_val = $heading_val.'|'.$heading;
+						}
+					} 
 					unset($final_excel_data[0]);
-				?>
-				<th><input type="checkbox" id="checkAll" /> Check All
-				<input type="submit" id="next" value="Go" class="btn btn-primary\"></th>
+			?>
+				<th><input type="checkbox" id="checkAll" /> Check All</th>
+				<th>
+				<input type="submit" id="next" value="Go" class="btn btn-primary" style="width: 100%"></th>
 	</thead>
+	<input type="hidden" name="hidden_format_name" value="<?php echo $heading_val; ?>">
 	<tbody class="record_table">
 			<?php
 					$td_values = "";
@@ -36,7 +49,11 @@
 					foreach ($final_excel_data as $key => $excel_data_array) {
 						foreach ($excel_data_array as $key => $value) {
 							$td_values = $td_values."<td>".$value."</td>";
+							if($checkbox_value==""){
 								$checkbox_value = $value;
+							}else{
+								$checkbox_value = $checkbox_value.'|'.$value;
+							}
 						}
 						echo '<tr>'.$td_values.'<td ><input type="checkbox" name="user_data[]" value="'.$checkbox_value.'"/></td></tr>';
 						$td_values = "</form>";

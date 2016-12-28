@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "eae37cb8-2db0-4c74-9eb4-9f042272f7c6",
-      "lastModifiedDate": 1482489621297,
+      "lastModifiedDate": 1482838728116,
       "creationDate": 1482489427704
     },
     "XDK-app-designer": "true",
@@ -91,7 +91,7 @@
           "android-signed": true
         },
         "isActive_": true,
-        "certificateId_": "PzJaJDBUMEalZLk99N13jA2",
+        "certificateId_": "",
         "appName_": "SMSAPI",
         "appID_": "xdk.intel.blank.ad.template.crosswalk",
         "appAccess_": {

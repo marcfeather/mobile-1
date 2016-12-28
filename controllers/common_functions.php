@@ -13,7 +13,7 @@
 	}
 
 	function create_folder($folder_name){
-		$path = "../../files/$folder_name";
+		$path = "../files/$folder_name";
 		if (!mkdir($path, 777, true)) {
 			header('location: ../view/404.php?status=folder_not_created');
 		}else{

@@ -12,8 +12,8 @@
 		create_session($raw_data);
 		header('Location: ../view/view.php');
 	}else{
-		echo "no data";
-		// header('Location: ../view/login.php?type=login_error');
+		// echo "no data";
+		header('Location: ../view/login.php?type=login_error');
 	}
 
 	
