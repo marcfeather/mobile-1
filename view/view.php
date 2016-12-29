@@ -40,22 +40,17 @@
 	<div>
 	<h1 style="text-align: center">Uploaded Files</h1> 
 	</div>
+	<hr>
+	<div>
+		<h1>&#160;&#160;&#160;	Welcome <?php print_r($_SESSION['user_details']['user_name']) ?></h1>
+	</div>
 	<div style="text-align:center;">
-		<table class="table" style="width: 100%">
-			<?php  
-				foreach ($result as $value) {
-					echo "<tr>";
-						echo "<td>";
-						echo "<a href='file_handle.php?file_name=".$value['file_name']."'>".$value['file_name']."</a>";
-						echo "</td>";
-						echo "<td>";
-						echo "<a href='../view/delete_file.php?file_name=".$value['file_name']."'><button type='button' class='btn btn-danger' style='width:208px;align:center;'> Delete </button></a>";
-						echo "</td>";
-					echo "</tr>";
-				}
+	<?php  
+		foreach ($result as $value) {
+				echo "<h1><a href='validate_message.php?file_name=".$value['file_name']."'>".$value['file_name']."</a></h1>";
+		}
 
-			?>
-		</table>
+	?>
 	</div>
 	<?php 	} ?>
 	
